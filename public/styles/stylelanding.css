@@ -1,0 +1,32 @@
+body {
+	background-color:black;
+}
+#logo {
+	background-color:black;
+}
+#house {
+	height:500px;
+	background-color: #00CCFF;
+}
+#techno {
+	height:500px;
+	background-color: black;
+}
+h1 {
+	font-size:60px;
+	color:#FFFFFF;
+}
+
+h2 {
+	font-size:48px;
+	padding:200px;
+}
+
+#housebutton {
+	color:black;
+
+}
+
+#technobutton {
+	color:#00CCFF;
+}
