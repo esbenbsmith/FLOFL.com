@@ -1,0 +1,25 @@
+body {
+	background-color:black;
+}
+h2 {
+	color:#00CCFF;
+}
+h3 {
+	color:#00CCFF;
+	font-size:14px;
+}
+p {
+	color:#00CCFF;
+}
+.techno {
+	background-color:black;
+}
+#toplogo {
+	padding-top:100px;
+}
+#topcontent {
+	padding-top:100px;
+}
+#aboutpic {
+	height:200px;
+}

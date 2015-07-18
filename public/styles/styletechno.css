@@ -1,3 +1,10 @@
+body {
+	background-color:black;
+}
+
 .techno {
 	background-color:black;
+}
+#toplogo {
+	padding-top:100px;
 }
