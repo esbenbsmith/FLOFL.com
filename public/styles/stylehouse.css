@@ -5,3 +5,7 @@ body {
 .house {
 	background-color: #00CCFF;
 }
+
+#toplogo {
+	padding-top:100px;
+}
