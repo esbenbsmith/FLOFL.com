@@ -23,3 +23,9 @@ p {
 #aboutpic {
 	height:200px;
 }
+#suggestions {
+	padding:20px;
+	background-color:#FFFFFF;
+	color:black;
+	border-radius:5px;
+}
