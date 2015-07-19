@@ -1,6 +1,9 @@
 body {
 	background-color:black;
 }
+a {
+	color:black;
+}
 
 .btn {
 	color:black;
@@ -12,7 +15,7 @@ body {
 
 
 #toplogo {
-	padding-top:100px;
+	padding-top:150px;
 }
 #robot {
 	border-radius:10px;

@@ -9,6 +9,7 @@ $("#techno").on({
         $(this).css({"background-color": "black"});
     }
 
+
 });
 
 
@@ -21,5 +22,17 @@ $("#house").on({
         //stuff to do on mouse leave
         $(this).css({"background-color": "#00CCFF"});
     }
+
 });
 
+$(document).ready(function() {
+  $('#house').find('a').trigger('click');
+});
+
+$(document).ready(function() {
+  $('#aboutbutton').find('a').trigger('click');
+});
+
+$(document).ready(function() {
+  $('#home').find('a').trigger('click');
+});
