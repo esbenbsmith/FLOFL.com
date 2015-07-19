@@ -26,6 +26,10 @@ app.get('/techno', function (req, res) {
   res.sendFile(__dirname + '/public/views/indextechno.html');
 });
 
+app.get('/about', function (req, res) {
+  res.sendFile(__dirname + '/public/views/about.html');
+});
+
 
 // set server to localhost:3000
 app.listen(3000, function () {

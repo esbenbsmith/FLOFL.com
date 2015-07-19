@@ -1,25 +1,35 @@
 body {
-	background-color:black;
+	background-color:orange;
 }
 h2 {
-	color:#00CCFF;
+	color:#000000;
 }
 h3 {
-	color:#00CCFF;
+	color:#000000;
 	font-size:14px;
 }
 p {
-	color:#00CCFF;
+	color:#000000;
+	font-size:16px;
+}
+.btn {
+	margin-top:20px;
+	color:black;
+
+}
+.navbar {
+	background-color:orange;
 }
 .techno {
 	background-color:black;
 }
+#aboutlogo {
+	padding-top:100px;
+}
 #toplogo {
 	padding-top:100px;
 }
-#topcontent {
-	padding-top:100px;
-}
+
 #aboutpic {
 	height:200px;
 }
@@ -28,4 +38,7 @@ p {
 	background-color:#FFFFFF;
 	color:black;
 	border-radius:5px;
+}
+.mainimage {
+	max-height:200px;
 }
