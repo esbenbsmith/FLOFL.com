@@ -2,10 +2,25 @@ body {
 	background-color: #00CCFF;
 }
 
+.btn {
+	color:black;
+	font-weight: bold;
+}
+.navbar {
+	background-color:black;
+}
+
 .house {
 	background-color: #00CCFF;
 }
 
 #toplogo {
 	padding-top:100px;
+}
+#robot {
+	border-radius:10px;
+	max-height:300px;
+}
+#aboutbutton {
+	padding:25px;
 }
