@@ -1,12 +1,23 @@
 body {
 	background-color:black;
 }
-.navbar {
-	background-color:#00CCFF;
+
+.btn {
+	color:black;
+	font-weight: bold;
 }
-.techno {
+.navbar {
 	background-color:black;
 }
+
+
 #toplogo {
 	padding-top:100px;
+}
+#robot {
+	border-radius:10px;
+	max-height:300px;
+}
+#aboutbutton {
+	padding:25px;
 }
