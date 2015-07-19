@@ -8,7 +8,7 @@ $("#techno").on({
         //stuff to do on mouse leave
         $(this).css({"background-color": "black"});
     }
-    
+
 });
 
 
@@ -22,3 +22,4 @@ $("#house").on({
         $(this).css({"background-color": "#00CCFF"});
     }
 });
+
