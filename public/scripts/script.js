@@ -36,3 +36,4 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#home').find('a').trigger('click');
 });
+
