@@ -3,7 +3,10 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     _ = require("underscore");
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/flofl');
 
+var Suggestion = require('./models/suggestions');
 
 // configure bodyParser (for handling data)
 app.use(bodyParser.urlencoded({extended: true}));
