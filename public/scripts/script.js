@@ -1,3 +1,18 @@
+$(document).ready(function(){
+$("#new-suggestion").submit(function(e){
+    e.preventDefault();
+    console.log("submitting form")
+    var suggestion = {
+        post: $("#posting").val()
+    }
+    console.log(suggestion);
+    $.post('/api/suggestion', suggestion, function(data) {
+      console.log(data)
+      $('#suggestionlist').prepend(data.post)
+    })
+    
+})
+})
 
 $("#techno").on({
     mouseenter: function () {
@@ -8,10 +23,7 @@ $("#techno").on({
         //stuff to do on mouse leave
         $(this).css({"background-color": "black"});
     }
-
-
 });
-
 
 $("#house").on({
     mouseenter: function () {
@@ -22,7 +34,6 @@ $("#house").on({
         //stuff to do on mouse leave
         $(this).css({"background-color": "#00CCFF"});
     }
-
 });
 
 $(document).ready(function() {

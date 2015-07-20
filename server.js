@@ -1,17 +1,16 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    _ = require("underscore");
+    _ = require("underscore"),
+    mongoose = require('mongoose'),
+    Suggestion = require('./models/suggestion');
 
-var mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost/flofl');
-
-var Suggestion = require('./models/suggestions');
-
+  
 // configure bodyParser (for handling data)
 app.use(bodyParser.urlencoded({extended: true}));
-
-
+ 
 
 // serve js and css files from public folder
 app.use(express.static(__dirname + '/public'));
@@ -33,6 +32,34 @@ app.get('/about', function (req, res) {
   res.sendFile(__dirname + '/public/views/about.html');
 });
 
+// API ROUTES
+
+// get all posts
+app.get('/api/suggestion', function (req, res) {
+  // find all posts from the database 
+  Suggestion.find({}, function(err, allSuggestions){
+    if (err){
+      console.log("error: ", err);
+      res.status(500).send(err);
+    } else {
+      // send all posts as JSON response
+      res.json(allSuggestions); 
+    }
+  });
+
+});
+
+app.post('/api/suggestion', function (req, res){
+ 
+  var suggestion = new Suggestion ({
+    post: req.body.post
+  })
+    console.log(suggestion)
+  suggestion.save(function(err, suggestion) {
+    res.json(suggestion)
+  })
+
+});
 
 // set server to localhost:3000
 app.listen(3000, function () {
