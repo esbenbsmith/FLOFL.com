@@ -6,7 +6,11 @@ var express = require('express'),
     Suggestion = require('./models/suggestion');
 
 
-mongoose.connect('mongodb://localhost/flofl');
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/flofl' // plug in the db name you've been using
+);
   
 // configure bodyParser (for handling data)
 app.use(bodyParser.urlencoded({extended: true}));
@@ -62,6 +66,4 @@ app.post('/api/suggestion', function (req, res){
 });
 
 // set server to localhost:3000
-app.listen(3000, function () {
-  console.log('server started on localhost:3000');
-});
+app.listen(process.env.PORT || 3000); 
