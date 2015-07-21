@@ -50,14 +50,14 @@ $("#house").on({
 });
 
 $(document).ready(function() {
-  $('#house').find('a').trigger('click');
+  $("#house").find("a").trigger("click");
 });
 
 $(document).ready(function() {
-  $('#aboutbutton').find('a').trigger('click');
+  $("#aboutbutton").find("a").trigger("click");
 });
 
 $(document).ready(function() {
-  $('#home').find('a').trigger('click');
+  $("#home").find("a").trigger("click");
 });
 

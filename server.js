@@ -2,15 +2,15 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     _ = require("underscore"),
-    cors = require('cors'),
-    mongoose = require('mongoose'),
-    Suggestion = require('./models/suggestion');
+    cors = require("cors"),
+    mongoose = require("mongoose"), 
+    Suggestion = require("./models/suggestion");
 
 
 mongoose.connect(
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/flofl' // plug in the db name you've been using
+  "mongodb://localhost/flofl" // plug in the db name you've been using
 );
 
   
@@ -20,7 +20,7 @@ app.use(cors());
  
 
 // serve js and css files from public folder
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
 //SUGGESTIONS #QUERY
 app.get("/api/suggestion", function (req, res) {
@@ -45,19 +45,19 @@ app.post("/api/suggestion", function(req, res){
 
 // root route (serves index.html)
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/views/landing.html');
+  res.sendFile(__dirname + "/public/views/landing.html");
 });
 
 app.get('/house', function (req, res) {
-  res.sendFile(__dirname + '/public/views/indexhouse.html');
+  res.sendFile(__dirname + "/public/views/indexhouse.html");
 });
 
 app.get('/techno', function (req, res) {
-  res.sendFile(__dirname + '/public/views/indextechno.html');
+  res.sendFile(__dirname + "/public/views/indextechno.html");
 });
 
 app.get('/about', function (req, res) {
-  res.sendFile(__dirname + '/public/views/about.html');
+  res.sendFile(__dirname + "/public/views/about.html");
 });
 
 // API ROUTES
