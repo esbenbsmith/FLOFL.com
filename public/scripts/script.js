@@ -7,9 +7,9 @@ $suggestion = _.template( $("#suggestiontemplate").html())
 $.get(baseUrl + "/api/suggestion", function(data){
     var suggestions = data
 
-    _.each(suggestions, function(suggestion){
+    _.each(suggestionlist, function(suggestion){
         console.log(suggestion)
-        $("#suggestionlist").append($suggestionlist(suggestion))
+        $("#suggestionlist").append($suggestion(suggestion))
     })
 })
 
