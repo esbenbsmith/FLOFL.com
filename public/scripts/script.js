@@ -8,24 +8,24 @@ $.get(baseUrl + "/api/suggestion", function(data){
     var suggestions = data
 
     _.each(suggestionlist, function(suggestion){
-        console.log(suggestion)
-        $("#suggestionlist").append($suggestion(suggestion))
-    })
-})
+        console.log(suggestion);
+        $("#suggestionlist").append($suggestion(suggestion));
+    });
+});
 
-$("#new-suggestion").submit(function(event){
-    event.preventdefault();
+$("#new-suggestion").on('submit', function (event){
+    event.preventDefault();
     console.log("form submit")
     var suggestion = {
         text: $("#posting").val()
     }
-    $post("/api/suggestion", suggestion, function(data){
-        console.log(data)
-        $("#suggestionlist").prepend($suggestion(data))
+    $.post("/api/suggestion", suggestion, function(data){
+        console.log(data);
+        $("#suggestionlist").prepend($suggestion(data));
 
-        })
-    })
-})
+        });
+    });
+});
 
 $("#techno").on({
     mouseenter: function () {
