@@ -5,8 +5,9 @@ $("#new-suggestion").submit(function(e){
     var suggestion = {
         post: $("#posting").val()
     }
-    console.log(suggestion);
+   
     $.post('//api/suggestion', suggestion, function(data) {
+        console.log(suggestion);
       console.log(data)
       $('#suggestionlist').prepend(data.post)
     })
