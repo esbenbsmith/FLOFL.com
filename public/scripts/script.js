@@ -9,7 +9,7 @@ $.get(baseUrl + "/api/suggestion", function(data){
 
     _.each(suggestions, function(suggestion){
         console.log(suggestion)
-        $("#suggestionlist").append($suggestion(suggestion))
+        $("#suggestionlist").append($suggestionlist(suggestion))
     })
 })
 
