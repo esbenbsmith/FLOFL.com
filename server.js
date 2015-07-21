@@ -41,7 +41,7 @@ app.get('/about', function (req, res) {
 // API ROUTES
 
 // get all posts
-app.get('/api/suggestion', function (req, res) {
+app.get('//api/suggestion', function (req, res) {
   // find all posts from the database 
   Suggestion.find({}, function(err, allSuggestions){
     if (err){
@@ -55,7 +55,7 @@ app.get('/api/suggestion', function (req, res) {
 
 });
 
-app.post('/api/suggestion', function (req, res){
+app.post('//api/suggestion', function (req, res){
  
   var suggestion = new Suggestion ({
     post: req.body.post
