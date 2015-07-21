@@ -16,6 +16,7 @@ mongoose.connect(
   
 // configure bodyParser (for handling data)
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors());
  
 
 // serve js and css files from public folder
