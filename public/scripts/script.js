@@ -1,8 +1,8 @@
 $(function(){
-    
+
 var baseUrl = "https://flofl.herokuapp.com"
 
-$suggestion = _.template( $(#suggestiontemplate).html())
+$suggestion = _.template( $("#suggestiontemplate").html())
 
 $.get(baseUrl + "/api/suggestion", function(data){
     var suggestions = data
