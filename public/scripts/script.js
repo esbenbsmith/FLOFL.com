@@ -19,7 +19,7 @@ $("#new-suggestion").submit(function(event){
     var suggestion = {
         text: $("#posting").val()
     }
-    $post("api/suggestion", suggestion, function(data){
+    $post("/api/suggestion", suggestion, function(data){
         console.log(data)
         $("#suggestionlist").prepend($suggestion(data))
 
