@@ -2,6 +2,7 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     _ = require("underscore"),
+    cors = require('cors'),
     mongoose = require('mongoose'),
     Suggestion = require('./models/suggestion');
 
@@ -12,7 +13,6 @@ mongoose.connect(
   'mongodb://localhost/flofl' // plug in the db name you've been using
 );
 
-
   
 // configure bodyParser (for handling data)
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,6 +20,27 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // serve js and css files from public folder
 app.use(express.static(__dirname + '/public'));
+
+//SUGGESTIONS #QUERY
+app.get("/api/suggestion", function (req, res) {
+  console.log(Suggestion);
+  Suggestion.find().sort("-_id").exec(function(err, suggestions){
+    console.log(suggestions);
+    res.json(suggestions);
+  });
+});
+
+//SUGGESTIONS #CREATE
+app.post("/api/suggestion", function(req, res){
+  //SAVE TO DB
+  var suggestion = new Suggestion({
+    text: req.body.text
+  });
+
+  suggestion.save(function(err, suggestion){
+    res.json(suggestion);
+  });
+});
 
 // root route (serves index.html)
 app.get('/', function (req, res) {
@@ -40,32 +61,7 @@ app.get('/about', function (req, res) {
 
 // API ROUTES
 
-// get all posts
-app.get('//api/suggestion', function (req, res) {
-  // find all posts from the database 
-  Suggestion.find({}, function(err, allSuggestions){
-    if (err){
-      console.log("error: ", err);
-      res.status(500).send(err);
-    } else {
-      // send all posts as JSON response
-      res.json(allSuggestions); 
-    }
-  });
 
-});
-
-app.post('//api/suggestion', function (req, res){
- 
-  var suggestion = new Suggestion ({
-    post: req.body.post
-  })
-    console.log(suggestion)
-  suggestion.save(function(err, suggestion) {
-    res.json(suggestion)
-  })
-
-});
 
 // set server to localhost:3000
 app.listen(process.env.PORT || 3000); 
