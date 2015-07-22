@@ -1,13 +1,13 @@
 $(function(){
 
-var baseUrl = "https://flofl.herokuapp.com"
-
 $suggestion = _.template( $("#suggestiontemplate").html())
 
-$.get(baseUrl + "/api/suggestion", function(data){
+$.get("/api/suggestion", function(data){
     var suggestions = data
+    console.log(data)
 
-    _.each(suggestionlist, function(suggestion){
+
+    _.each(suggestions, function(suggestion){
         console.log(suggestion);
         $("#suggestionlist").append($suggestion(suggestion));
     });
@@ -24,8 +24,10 @@ $("#new-suggestion").on('submit', function (event){
         $("#suggestionlist").prepend($suggestion(data));
 
         });
+        
     });
 });
+
 
 $("#techno").on({
     mouseenter: function () {
@@ -60,4 +62,5 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#home").find("a").trigger("click");
 });
+
 
