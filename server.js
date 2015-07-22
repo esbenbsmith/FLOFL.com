@@ -4,7 +4,9 @@ var express = require('express'),
     _ = require("underscore"),
     cors = require("cors"),
     mongoose = require("mongoose"), 
-    Suggestion = require("./models/suggestion");
+    Suggestion = require("./models/suggestion"),
+    User = require("./models/user"), 
+    session = require('express-session');
 
 
 mongoose.connect(
@@ -22,7 +24,9 @@ app.use(cors());
 // serve js and css files from public folder
 app.use(express.static(__dirname + "/public"));
 
-//SUGGESTIONS #QUERY
+
+//API ROUTES:
+//SUGGESTIONS QUERY
 app.get("/api/suggestion", function (req, res) {
   console.log(Suggestion);
   Suggestion.find().sort("-_id").exec(function(err, suggestions){
@@ -31,8 +35,8 @@ app.get("/api/suggestion", function (req, res) {
   });
 });
 
-//SUGGESTIONS #CREATE
-app.post("/api/suggestion", function(req, res){
+//SUGGESTIONS CREATE
+app.post("/api/suggestion", function (req, res){
   //SAVE TO DB
   var suggestion = new Suggestion({
     text: req.body.text
@@ -42,6 +46,12 @@ app.post("/api/suggestion", function(req, res){
     res.json(suggestion);
   });
 });
+
+//USER CREATE
+// create new user with secure password
+
+
+//PUBLIC ROUTES
 
 // root route (serves index.html)
 app.get('/', function (req, res) {
@@ -60,7 +70,10 @@ app.get('/about', function (req, res) {
   res.sendFile(__dirname + "/public/views/about.html");
 });
 
-// API ROUTES
+app.get('/login', function (req, res) {
+  res.sendFile(__dirname + "/public/views/login.html");
+});
+
 
 
 
