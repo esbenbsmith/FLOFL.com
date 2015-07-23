@@ -34,7 +34,7 @@
 							 <ul class="nav navbar-nav navbar-right" id="nav-links">
 						          <!-- underscore template for nav links -->
 						          <script type="text/template" id="nav-template">
-						            <% if (currentUser) { %>
+						            <% if ( currentUser ) { %>
 						              <li><%= currentUser.email %></li>
 						              <li><a href="/logout">Log Out</a></li>
 						            <% } else { %>
