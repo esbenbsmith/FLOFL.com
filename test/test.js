@@ -19,6 +19,8 @@ describe('https://flofl.herokuapp.com/', function() {
 });
 
 
+
+
 describe('https://flofl.herokuapp.com/house', function() {
   it('should have a HTTPS of 200 - success', function(done) {
     request('https://flofl.herokuapp.com/', function(err, res, body) {
@@ -43,6 +45,16 @@ describe('https://flofl.herokuapp.com/techno', function() {
 describe('https://flofl.herokuapp.com/about', function() {
   it('should have a HTTPS of 200 - success', function(done) {
     request('https://flofl.herokuapp.com/', function(err, res, body) {
+      expect(res.statusCode).to.equal(200)
+      // expect(res.statusCode).to.equal(300)
+      done();
+    })
+  })
+});
+
+describe('https://flofl.herokuapp.com/api/suggestion', function() {
+  it('should have a HTTPS of 200 - success', function(done) {
+    request('https://flofl.herokuapp.com/api/suggestion', function(err, res, body) {
       expect(res.statusCode).to.equal(200)
       // expect(res.statusCode).to.equal(300)
       done();

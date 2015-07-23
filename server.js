@@ -33,7 +33,7 @@ app.use(session({
 
 
 // middleware to manage sessions
-app.use('/login', function (req, res, next) {
+app.use(function (req, res, next) {
   // saves userId in session for logged-in user
   req.login = function (user) {
     req.session.userId = user.id;
@@ -56,7 +56,7 @@ app.use('/login', function (req, res, next) {
   next();
 });
 
-//API ROUTES:
+//API ROUTES FOR SUGGESTIONS BOARD
 
 // API SUGGESTIONS QUERY
 app.get("/api/suggestion", function (req, res) {
@@ -78,6 +78,9 @@ app.post("/api/suggestion", function (req, res){
     res.json(suggestion);
   });
 });
+
+
+
 
 
 // AUTH ROUTES (SIGN UP, LOG IN, LOG OUT)
@@ -108,6 +111,22 @@ app.get('/logout', function (req, res) {
   res.redirect('/');
 });
 
+///------------------------------------------------BELOW
+// show current user
+app.get('/api/users/current', function (req, res) {
+  // check for current (logged-in) user
+  req.currentUser(function (err, user) {
+    console.log("SENDING:", JSON.stringify(user))
+    res.json(user);
+  });
+});     
+
+
+
+//------------------------------------------------ABOVE
+
+
+
 
 //STATIC ROUTES
 
@@ -136,7 +155,6 @@ app.get('/about', function (req, res) {
 app.get('/registration', function (req, res) {
   res.sendFile(__dirname + "/public/views/registration.html");
 });
-
 
 
 
