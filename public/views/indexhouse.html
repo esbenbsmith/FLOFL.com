@@ -17,28 +17,90 @@
 <body>
 	
 	<nav class="navbar navbar-default navbar-fixed-top">
-	  	<div class="container">
-	    	<div class="row">
-				<div class="col-md-1">
-					<a href="/">
-						<img id="home" src="/images/HOUSENAV.png"/>
-					</a>
-				</div>
+			  	<div class="container">
+			    	<div class="row">
+						<div class="col-md-1">
+							<a href="/">
+								<img src="/images/HOUSENAV.png"/>
+							</a>
+						</div>
+						
+							 <ul class="nav navbar-nav navbar-right" id="nav-links">
+						          <!-- underscore template for nav links -->
+						          <script type="text/template" id="nav-template">
+						            <% if ( currentUser ) { %>
+						              <li><%= currentUser.email %></li>
+						              <li><a href="/logout">Log Out</a></li>
+						            <% } else { %>
+						              <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+						              <li><a href="#" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+						            <% } %>
+						          </script>
+						    </ul>
+						
+			  		</div>
+			  	</div>
+		</nav>
 
-				<div class="col-md-offset-9">
-					<center>
-	       	 			<a id="aboutbutton"  href="/about"><button type="button" class="btn btn-info">What is FLOFL?</button></a>
-	       	 			<a href="/registration">
-	       	 				<button  type="button" class="btn btn-info">Sign Up</button>
-						</a>
-						<a href="/registration">
-	       	 				<button  type="button" class="btn btn-info">Login</button>
-	       	 			</a>
-	       	 		</center>
-	    		</div>
-	  		</div>
-	  	</div>
-	</nav>
+	<!-- Modal -->
+		<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="SignUpModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="signup-modal">Sign Up</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form method="post" action="/users">
+		          
+		            	<div class="form-group">
+		              		<input type="email" name="user[email]" class="form-control" placeholder="Email">
+		            	</div>
+		            	<div class="form-group">
+		              		<input type="password" name="user[password]" class="form-control" placeholder="Password">
+		            	</div>
+						<hr>
+						<div class="modal-footer">
+		            	<input type="submit" value="Sign Up" class="btn btn-warning">
+		          		</div>
+		        	</form>
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+			<!-- Modal -->
+		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="login-modal">Sign Up</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form method="post" action="/login">
+
+			            <div class="form-group">
+			            	<input type="email" name="user[email]" class="form-control" placeholder="Email">
+			            </div>
+			            <div class="form-group">
+			            	<input type="password" name="user[password]" class="form-control" placeholder="Password">
+			            </div>
+
+						<hr>
+						<div class="modal-footer">
+			           	<input type="submit" value="Log In" class="btn btn-warning">
+			          	</div>
+			    </form>
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
 
 	<div class="container">
 
@@ -82,7 +144,8 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
 	  <!-- custom script -->
-	<script type="text/javascript" src="/scripts/script.js"></script>
+	
+	<script type="text/javascript" src="scripts/nav.js"></script>
 	
 </body>
 </html>
