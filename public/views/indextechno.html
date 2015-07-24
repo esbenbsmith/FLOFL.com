@@ -25,12 +25,18 @@
 								<img src="/images/NAVLOGO.JPG"/>
 							</a>
 						</div>
+
 						
 							 <ul class="nav navbar-nav navbar-right" id="nav-links">
+							 	<li><a id="about" href="/about">
+							 		About
+							 	</a></li>
+							 	
 						          <!-- underscore template for nav links -->
 						          <script type="text/template" id="nav-template">
 						            <% if ( currentUser ) { %>
-						              <li><%= currentUser.email %></li>
+						              <li>Welcome 
+						              <br><%= currentUser.email %> !</li>
 						              <li><a href="/logout">Log Out</a></li>
 						            <% } else { %>
 						              <li><a href="#" data-toggle="modal" data-target="#signup-modal" id="signup">Sign Up</a></li>

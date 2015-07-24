@@ -22,26 +22,27 @@ ul {
 .house {
 	background-color: #00CCFF;
 }
+#about {
+	color:black;
+	background-color: #00CCFF;
+}
 
 #toplogo {
 	padding-top:80px;
 }
 
 #robot {
-	border-radius:10px;
 	max-height:300px;
 }
 
 #signup {
-	background-color: black;
-	border-radius: 5px;
-	color: white;
+	background-color: #00CCFF;
+	color: black;
 }
 
 #login {
-	background-color: black;
-	border-radius: 5px;
-	color: white;
+	background-color: #00CCFF;
+	color: black;
 }
 
 

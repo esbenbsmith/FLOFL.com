@@ -22,19 +22,20 @@ li {
 	padding-top:80px;
 }
 #robot {
-	border-radius:10px;
 	max-height:300px;
+}
+#about {
+	background-color: black;
+	color: white;
 }
 
 #signup {
-	background-color: #00CCFF;
-	border-radius: 5px;
-	color: black;
+	background-color: black;
+	color: white;
 }
 
 #login {
-	background-color: #00CCFF;
-	border-radius: 5px;
-	color: black;
+	background-color: black;
+	color: white;
 }
 

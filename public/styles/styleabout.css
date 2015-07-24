@@ -42,3 +42,18 @@ p {
 .mainimage {
 	max-height:200px;
 }
+
+#about {
+	background-color: orange;
+	color: black;
+}
+
+#signup {
+	background-color: orange;
+	color: black;
+}
+
+#login {
+	background-color: orange;
+	color: black;
+}
