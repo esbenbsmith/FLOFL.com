@@ -48,7 +48,7 @@ $("#house").on({
     mouseleave: function () {
         //stuff to do on mouse leave
         $(this).css({"background-color": "#00CCFF"});
-    }
+    }   
 });
 
 $(document).ready(function() {
@@ -63,8 +63,4 @@ $(document).ready(function() {
   $("#home").find("a").trigger("click");
 });
 
-// -------------------------------------------------------------BELOW
 
-
-
-// -------------------------------------------------------------ABOVE

@@ -24,6 +24,7 @@ app.use(cors());
 // serve js and css files from public folder
 app.use(express.static(__dirname + "/public"));
 
+
 app.use(session({
   saveUninitialized: true,
   resave: true,
@@ -111,7 +112,6 @@ app.get('/logout', function (req, res) {
   res.redirect('/');
 });
 
-///------------------------------------------------BELOW
 // show current user
 app.get('/api/users/current', function (req, res) {
   // check for current (logged-in) user
@@ -120,13 +120,6 @@ app.get('/api/users/current', function (req, res) {
     res.json(user);
   });
 });     
-
-
-
-//------------------------------------------------ABOVE
-
-
-
 
 //STATIC ROUTES
 
@@ -151,12 +144,8 @@ app.get('/about', function (req, res) {
   res.sendFile(__dirname + "/public/views/about.html");
 });
 
-//login/signup
-app.get('/registration', function (req, res) {
-  res.sendFile(__dirname + "/public/views/registration.html");
-});
 
-
+//APP.LISTEN
 
 // set server to localhost:3000
 app.listen(process.env.PORT || 3000); 

@@ -1,6 +1,16 @@
 body {
 	background-color:black;
 }
+
+h1 {
+	font-size:60px;
+	color:#FFFFFF;
+}
+
+h2 {
+	font-size:48px;
+	padding:200px;
+}
 #logo {
 	background-color:black;
 }
@@ -11,15 +21,6 @@ body {
 #techno {
 	height:500px;
 	background-color: black;
-}
-h1 {
-	font-size:60px;
-	color:#FFFFFF;
-}
-
-h2 {
-	font-size:48px;
-	padding:200px;
 }
 
 #housebutton {

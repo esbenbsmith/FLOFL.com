@@ -5,6 +5,10 @@ a {
 	color:black;
 }
 
+li {
+	color:white;
+}
+
 .btn {
 	color:black;
 	font-weight: bold;
@@ -22,7 +26,15 @@ a {
 	max-height:300px;
 }
 
-li {
-	color:white;
+#signup {
+	background-color: #00CCFF;
+	border-radius: 5px;
+	color: black;
+}
+
+#login {
+	background-color: #00CCFF;
+	border-radius: 5px;
+	color: black;
 }
 

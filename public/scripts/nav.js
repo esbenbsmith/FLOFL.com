@@ -23,3 +23,4 @@ $(function() {
   mainController.showCurrentUser();
 
 });
+

@@ -25,20 +25,21 @@
 								<img src="/images/HOUSENAV.png"/>
 							</a>
 						</div>
-						
+							
 							 <ul class="nav navbar-nav navbar-right" id="nav-links">
-						          <!-- underscore template for nav links -->
+							 	
+						          <!-- underscore template for nav links -->						          
 						          <script type="text/template" id="nav-template">
 						            <% if ( currentUser ) { %>
 						              <li><%= currentUser.email %></li>
 						              <li><a href="/logout">Log Out</a></li>
 						            <% } else { %>
-						              <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
-						              <li><a href="#" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+						              <li><a href="#" data-toggle="modal" data-target="#signup-modal" id="signup">Sign Up</a></li>
+						              <li><a href="#" data-toggle="modal" data-target="#login-modal" id="login">Log In</a></li>
 						            <% } %>
 						          </script>
 						    </ul>
-						
+							
 			  		</div>
 			  	</div>
 		</nav>
@@ -55,7 +56,7 @@
 		        <form method="post" action="/users">
 		          
 		            	<div class="form-group">
-		              		<input type="email" name="user[email]" class="form-control" placeholder="Email">
+		              		<input type="email" name="user[email]" class="form-control" placeholder="Email" required>
 		            	</div>
 		            	<div class="form-group">
 		              		<input type="password" name="user[password]" class="form-control" placeholder="Password">
@@ -83,7 +84,7 @@
 		        <form method="post" action="/login">
 
 			            <div class="form-group">
-			            	<input type="email" name="user[email]" class="form-control" placeholder="Email">
+			            	<input type="email" name="user[email]" class="form-control" placeholder="Email" required>
 			            </div>
 			            <div class="form-group">
 			            	<input type="password" name="user[password]" class="form-control" placeholder="Password">
