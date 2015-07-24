@@ -1,5 +1,4 @@
 $(function() {
-console.log("Hi Cameron")
   // `mainController` holds shared site functionality
   var mainController = {
 
