@@ -93,7 +93,7 @@ app.post('/users', function (req, res) {
     // log in user immediately when created
     // req.login(user);
     console.log(newUser);
-    res.redirect('/');
+    res.redirect('back');
   });
 });
 
@@ -102,14 +102,14 @@ app.post('/login', function (req, res) {
   var userData = req.body.user;
   User.authenticate(userData.email, userData.password, function (err, user) {
     req.login(user);
-    res.redirect('/');
+    res.redirect('back');
   });
 });
 
 // log out user (destroy session)
 app.get('/logout', function (req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('back');
 });
 
 // show current user
